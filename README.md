@@ -120,7 +120,7 @@ services:
       - ./duckdns:/config # Directorio para archivos persistentes.
 ```
 
-### Servidor NAS (UGREEN, Synology, QNAP, etc)
+### Docker Compose para servidor NAS (UGREEN, Synology, QNAP, etc)
 
 ```yaml
 *** EN CONSTRUCCIÓN ***
