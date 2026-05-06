@@ -8,7 +8,8 @@ WireGuard Easy es una VPN que permite acceder de forma remota a tu red local y n
 ## 🛒 Hardware recomendado (links de afiliado)
 
 ### Raspberry Pi
-
+- [Raspberry Pi Zero](https://amzlink.to/az0HhtYcw1gmc)
+- [Raspberry Pi Zero Kit de Inicio](https://amzlink.to/az0W4uWgDihGD)
 - [Raspberry Pi 5 (4GB)](https://amzlink.to/az0kKjY684Uj9)
 - [Raspberry Pi 5 (8GB)](https://amzlink.to/az08MBpttxAE0)
 - [Raspberry Pi 5 (Kit de Inicio)](https://amzlink.to/az0aU2Htv0MxJ)
