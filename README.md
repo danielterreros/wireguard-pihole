@@ -42,7 +42,7 @@ Usa el `docker-compose.yml` correspondiente según el dispositivo donde lo vayas
 
 ```yaml
 networks:
-  wireguard:
+  wireguard_net:
     driver: bridge
     enable_ipv6: true 
     ipam:
@@ -57,7 +57,7 @@ services:
     container_name: wg-easy
     restart: unless-stopped
     networks:
-      - wireguard
+      - wireguard_net
     cap_add:
       - NET_ADMIN
       - SYS_MODULE
