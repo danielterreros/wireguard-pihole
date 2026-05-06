@@ -38,18 +38,12 @@ services:
     container_name: pihole
     hostname: raspberrypi # Nombre de tu dispositivo.
     restart: unless-stopped
-    ports:
-      - "53:53/tcp"
-      - "53:53/udp"
-      - "80:80/tcp"
-      - "443:443/tcp"
-     # - "67:67/udp" # Opcional: usar Pi-hole como servidor DHCP.
-     # - "123:123/udp" # Opcional: usar Pi-hole como cliente NTP.
+    network_mode: host
     environment:
       - TZ=Europe/Madrid # Zona horaria.
-      - FTLCONF_webserver_api_password=${PIHOLE_PASSWORD} # Password de acceso a Pi-hole.
+      - FTLCONF_webserver_api_password=tupassword # Password de acceso a Pi-hole.
      # - FTLCONF_webserver_port=8080,8443s # Opcional: cambiar puertos 80:80 (HTTP) y 443:443 (HTTPS) para acceso web.
-      - FTLCONF_dns_listeningMode=ALL
+      - FTLCONF_dns_listeningMode=LOCAL
      # - FTLCONF_dns_specialDomains_iCloudPrivateRelay=true # Opcional: relay privado de Apple.
       - PIHOLE_UID=1000 # UID de tu máquina. Comprobar con comando: id -u
       - PIHOLE_GID=1000 # UID de tu máquina. Comprobar con comando: id -g
@@ -64,8 +58,7 @@ services:
     image: lscr.io/linuxserver/duckdns:latest
     container_name: duckdns
     restart: unless-stopped
-    networks:
-      - wireguard
+    network_mode: host
     environment:
       - PUID=1000 # UID de tu máquina. Comprobar con comando: id -u
       - PGID=1000 # UID de tu máquina. Comprobar con comando: id -g
@@ -73,6 +66,6 @@ services:
       - SUBDOMAINS=tusubdominio # Nombre del subdominio creado en duckdns.org
       - TOKEN=tutoken # Token de Duck DNS.
       - UPDATE_IP=both
-      - LOG_FILE=true
+      - LOG_FILE=false
     volumes:
       - ./duckdns:/config # Directorio para archivos persistentes.
