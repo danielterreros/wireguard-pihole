@@ -1,4 +1,4 @@
-# 🐳 WireGuard Easy + Pi-hole en Docker
+# 🐳 WireGuard Easy VPN + Pi-hole en Docker
 
 Docker Compose para instalar WireGuard Easy VPN y Pi-hole en Raspberry Pi, PC o servidores NAS.
 WireGuard Easy es una VPN que permite acceder de forma remota a tu red local y navegar de forma segura incluso cuando utilizas redes Wi-Fi públicas, mientras que Pi-hole bloquea anuncios y rastreadores en todos los dispositivos de tu red local o conectados mediante WireGuard.
