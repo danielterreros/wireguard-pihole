@@ -35,7 +35,7 @@ Si estás empezando en el mundo del self-hosting y los servidores caseros, estos
 
 ## ⚙️ Instalación
 
-Usa el `docker-compose.yml` correspondiente según el dispositivo donde lo vayas a instalar. Antes de desplegar los contenedores, modifica las líneas que contengan `# Comentario`.
+Usa el `docker-compose.yml` correspondiente según el dispositivo donde lo vayas a instalar. Antes de desplegar los contenedores, modifica las líneas que contengan `# Comentario`
 
 ### Raspberry Pi / PC
 
