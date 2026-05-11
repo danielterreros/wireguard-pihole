@@ -19,6 +19,7 @@ services:
       - NET_ADMIN
       - SYS_MODULE
     ports:
+     # Comprobar puertos libres con comando: sudo ss -tulpn | grep :puerto 
       - "51820:51820/udp"
       - "51821:51821/tcp"
     environment:
@@ -40,8 +41,8 @@ services:
     restart: unless-stopped
     network_mode: host
     environment:
-      - TZ=Europe/Madrid # Zona horaria.
-      - FTLCONF_webserver_api_password=tupassword # Password de acceso a Pi-hole.
+      - TZ=Europe/Madrid # Zona horaria. Comprobar aquí: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+      - FTLCONF_webserver_api_password=${PIHOLE_PASSWORD} # Password de acceso a Pi-hole.
      # - FTLCONF_webserver_port=8080,8443s # Opcional: cambiar puertos 80:80 (HTTP) y 443:443 (HTTPS) para acceso web.
       - FTLCONF_dns_listeningMode=LOCAL
      # - FTLCONF_dns_specialDomains_iCloudPrivateRelay=true # Opcional: relay privado de Apple.
@@ -62,8 +63,8 @@ services:
     environment:
       - PUID=1000 # UID de tu máquina. Comprobar con comando: id -u
       - PGID=1000 # UID de tu máquina. Comprobar con comando: id -g
-      - TZ=Europe/Madrid # Zona horaria.
-      - SUBDOMAINS=tusubdominio # Nombre del subdominio creado en duckdns.org
+      - TZ=Europe/Madrid # Zona horaria. Comprobar aquí: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+      - SUBDOMAINS=tusubdominio # Nombre del subdominio creado en Duck DNS.
       - TOKEN=tutoken # Token de Duck DNS.
       - UPDATE_IP=both
       - LOG_FILE=false
