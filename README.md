@@ -4,8 +4,9 @@ Docker Compose para instalar WireGuard Easy VPN y Pi-hole en Raspberry Pi, PC o 
 WireGuard Easy es una VPN que permite acceder de forma remota a tu red local y navegar de forma segura incluso cuando utilizas redes Wi-Fi públicas, mientras que Pi-hole bloquea anuncios y rastreadores en todos los dispositivos de tu red local o conectados mediante WireGuard.
 
 ### 📺 [Tutorial completo en YouTube](https://youtu.be/C043K2Pie9Q?si=7RE5iNxDx3r4-ogH)
+<br>
 
-## 🛒 Hardware recomendado (links de afiliado)
+## 🛒 Hardware recomendado
 
 ### Raspberry Pi
 - [Raspberry Pi Zero](https://amzlink.to/az0HhtYcw1gmc)
@@ -27,16 +28,20 @@ WireGuard Easy es una VPN que permite acceder de forma remota a tu red local y n
 - [UGREEN NAS DXP4800](https://amzlink.to/az0BZ6iK7V3LS)
 - [UGREEN NAS DXP4800 Plus](https://amzlink.to/az04N89RnbyGU)
 - [Disco duro HDD para NAS](https://amzlink.to/az0ouuFKDlp18)
+<br>
 
 ## ✅ Requisitos previos
 Si estás empezando en el mundo del self-hosting y los servidores caseros, estos vídeos te servirán como base para utilizar una Raspberry Pi, un PC o un NAS como servidor doméstico con servicios autoalojados. Te recomiendo verlos antes de continuar con esta guía.
 - [Raspberry Pi | Configuración Inicial](https://youtu.be/xRsxs5eBpmI?si=E7SvINDe1LTBV80S)
 - [Raspberry Pi / PC | Instalar Docker y Portainer](https://youtu.be/-7vvELophxU?si=jD1oQdPo2f9jWDQN)
 - [Servidor NAS | Instalar Docker y Portainer](https://youtu.be/hOiNrQXN-VE?si=ekD4vuqoADXxLphR)
+<br>
 
 ## ⚙️ Instalación
 
 Usa el `docker-compose.yml` correspondiente según el dispositivo donde lo vayas a instalar. Antes de desplegar los contenedores, modifica las líneas que contengan `# Comentario`
+
+<br>
 
 ### Docker Compose para Raspberry Pi / PC
 
@@ -62,6 +67,7 @@ services:
       - NET_ADMIN
       - SYS_MODULE
     ports:
+     # Comprobar puertos libres con comando: sudo ss -tulpn | grep :puerto 
       - "51820:51820/udp"
       - "51821:51821/tcp"
     environment:
@@ -83,7 +89,7 @@ services:
     restart: unless-stopped
     network_mode: host
     environment:
-      - TZ=Europe/Madrid # Zona horaria.
+      - TZ=Europe/Madrid # Zona horaria. Comprobar aquí: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
       - FTLCONF_webserver_api_password=tupassword # Password de acceso a Pi-hole.
      # - FTLCONF_webserver_port=8080,8443s # Opcional: cambiar puertos 80:80 (HTTP) y 443:443 (HTTPS) para acceso web.
       - FTLCONF_dns_listeningMode=LOCAL
@@ -105,7 +111,7 @@ services:
     environment:
       - PUID=1000 # UID de tu máquina. Comprobar con comando: id -u
       - PGID=1000 # UID de tu máquina. Comprobar con comando: id -g
-      - TZ=Europe/Madrid # Zona horaria.
+      - TZ=Europe/Madrid # Zona horaria. Comprobar aquí: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
       - SUBDOMAINS=tusubdominio # Nombre del subdominio creado en duckdns.org
       - TOKEN=tutoken # Token de Duck DNS.
       - UPDATE_IP=both
@@ -113,12 +119,14 @@ services:
     volumes:
       - ./duckdns:/config # Directorio para archivos persistentes.
 ```
+<br>
 
 ### Docker Compose para servidor NAS (UGREEN, Synology, QNAP, etc)
 
 ```yaml
 *** EN CONSTRUCCIÓN ***
 ```
+<br>
 
 ### 🌐 Acceso web
 
@@ -130,6 +138,8 @@ services:
 
 #### Pi-hole (Servidor NAS):
 `http://IP-DE-TU-PIHOLE/admin`
+
+<br>
 
 ## 📄 Documentación oficial
 
