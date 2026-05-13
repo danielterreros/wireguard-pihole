@@ -7,7 +7,7 @@ WireGuard Easy es una VPN que permite acceder de forma remota a tu red local y n
   <a href="https://www.youtube.com/watch?v=C043K2Pie9Q&list=PLi3y-uEs6TANeomkFB5ulwpXr1lIyOvg8&index=8">
     <img src="https://img.youtube.com/vi/C043K2Pie9Q/maxresdefault.jpg" alt="Tutorial completo en YouTube" width="800">
   </a><br>
-  <strong>⬆️ Tutorial completo en YouTube ⬆️</strong>
+  <strong>⬆️ Ver vídeo tutorial en YouTube ⬆️</strong>
 </p>
 
 
