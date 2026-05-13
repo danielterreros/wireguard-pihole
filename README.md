@@ -1,9 +1,9 @@
 # 🐳 WireGuard Easy VPN + Pi-hole en Docker
 
 Docker Compose para instalar WireGuard Easy VPN y Pi-hole en Raspberry Pi, PC o servidores NAS.
-WireGuard Easy es una VPN que permite acceder de forma remota a tu red local y navegar de forma segura incluso cuando utilizas redes Wi-Fi públicas, mientras que Pi-hole bloquea anuncios y rastreadores en todos los dispositivos de tu red local o conectados mediante WireGuard.
+WireGuard Easy es una VPN que permite acceder de forma remota a tu red local y navegar de forma segura incluso cuando utilizas redes Wi-Fi públicas, mientras que Pi-hole bloquea anuncios y rastreadores en todos los dispositivos de tu red local o conectados mediante WireGuard Easy VPN.
 
-**📺 [Tutorial completo en YouTube](https://youtu.be/C043K2Pie9Q?si=7RE5iNxDx3r4-ogH)**
+**📺 [Tutorial completo en YouTube](https://www.youtube.com/watch?v=C043K2Pie9Q&list=PLi3y-uEs6TANeomkFB5ulwpXr1lIyOvg8&index=8)**
 
 
 ## 🛒 Hardware recomendado
@@ -32,6 +32,7 @@ WireGuard Easy es una VPN que permite acceder de forma remota a tu red local y n
 
 ## ✅ Requisitos previos
 Si estás empezando en el mundo del self-hosting, estos vídeos te servirán como base para usar una Raspberry Pi, un PC o un NAS como servidor doméstico con servicios autoalojados. Te recomiendo verlos antes de continuar con esta guía.
+
 - 📺 [Raspberry Pi 5: Configuración de cero](https://youtu.be/xRsxs5eBpmI?si=E7SvINDe1LTBV80S)
 - 📺 [Instalar Docker y Portainer en Raspberry Pi 5 / PC](https://youtu.be/-7vvELophxU?si=jD1oQdPo2f9jWDQN)
 - 📺 [Instalar Docker y Portainer en servidor NAS](https://youtu.be/hOiNrQXN-VE?si=ekD4vuqoADXxLphR)
@@ -39,7 +40,7 @@ Si estás empezando en el mundo del self-hosting, estos vídeos te servirán com
 
 ## ⚙️ Instalación
 
-Usa el `docker-compose.yml` correspondiente según el dispositivo donde lo vayas a instalar. Antes de desplegar los contenedores, modifica las líneas que contengan `# Comentario`
+Usa el `docker-compose.yml` correspondiente a tu dispositivo. Antes de desplegar los contenedores, revisa y modifica las líneas marcadas con `# Comentario`, como puertos, IPs, contraseñas o rutas.
 
 ### Docker Compose para Raspberry Pi / PC
 
