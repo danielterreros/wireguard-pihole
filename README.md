@@ -31,11 +31,12 @@ WireGuard Easy es una VPN que permite acceder de forma remota a tu red local y n
 
 
 ## ✅ Requisitos previos
+
 Si estás empezando en el mundo del self-hosting, estos vídeos te servirán como base para usar una Raspberry Pi, un PC o un NAS como servidor doméstico con servicios autoalojados. Te recomiendo verlos antes de continuar con esta guía.
 
-- 📺 [Raspberry Pi 5: Configuración de cero](https://youtu.be/xRsxs5eBpmI?si=E7SvINDe1LTBV80S)
-- 📺 [Instalar Docker y Portainer en Raspberry Pi 5 / PC](https://youtu.be/-7vvELophxU?si=jD1oQdPo2f9jWDQN)
-- 📺 [Instalar Docker y Portainer en servidor NAS](https://youtu.be/hOiNrQXN-VE?si=ekD4vuqoADXxLphR)
+- 📺 [Raspberry Pi 5: Configuración de cero](https://www.youtube.com/watch?v=xRsxs5eBpmI&list=PLi3y-uEs6TANeomkFB5ulwpXr1lIyOvg8&index=6)
+- 📺 [Instalar Docker y Portainer en Raspberry Pi 5 / PC](https://www.youtube.com/watch?v=-7vvELophxU&list=PLi3y-uEs6TANeomkFB5ulwpXr1lIyOvg8&index=7)
+- 📺 [Instalar Docker y Portainer en servidor NAS](https://www.youtube.com/watch?v=hOiNrQXN-VE&list=PLi3y-uEs6TANeomkFB5ulwpXr1lIyOvg8&index=4)
 
 
 ## ⚙️ Instalación
