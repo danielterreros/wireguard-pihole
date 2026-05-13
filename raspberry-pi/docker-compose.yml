@@ -1,12 +1,10 @@
 networks:
   wireguard_net:
     driver: bridge
-    enable_ipv6: true 
     ipam:
       driver: default
       config:
         - subnet: 10.42.42.0/24
-        - subnet: fdcc:ad94:bacf:61a3::/64
         
 services:
   wg-easy:
@@ -30,9 +28,6 @@ services:
     sysctls:
       - net.ipv4.ip_forward=1
       - net.ipv4.conf.all.src_valid_mark=1
-      - net.ipv6.conf.all.disable_ipv6=0
-      - net.ipv6.conf.all.forwarding=1
-      - net.ipv6.conf.default.forwarding=1
       
   pihole:
     image: pihole/pihole:latest
@@ -42,9 +37,9 @@ services:
     network_mode: host
     environment:
       - TZ=Europe/Madrid # Zona horaria. Comprobar aquí: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-      - FTLCONF_webserver_api_password=${PIHOLE_PASSWORD} # Password de acceso a Pi-hole.
+      - FTLCONF_webserver_api_password=tupassword # Password de acceso a Pi-hole.
      # - FTLCONF_webserver_port=8080,8443s # Opcional: cambiar puertos 80:80 (HTTP) y 443:443 (HTTPS) para acceso web.
-      - FTLCONF_dns_listeningMode=LOCAL
+      - FTLCONF_dns_listeningMode=ALL
      # - FTLCONF_dns_specialDomains_iCloudPrivateRelay=true # Opcional: relay privado de Apple.
       - PIHOLE_UID=1000 # UID de tu máquina. Comprobar con comando: id -u
       - PIHOLE_GID=1000 # UID de tu máquina. Comprobar con comando: id -g
@@ -64,9 +59,9 @@ services:
       - PUID=1000 # UID de tu máquina. Comprobar con comando: id -u
       - PGID=1000 # UID de tu máquina. Comprobar con comando: id -g
       - TZ=Europe/Madrid # Zona horaria. Comprobar aquí: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-      - SUBDOMAINS=tusubdominio # Nombre del subdominio creado en Duck DNS.
+      - SUBDOMAINS=tusubdominio # Nombre del subdominio creado en duckdns.org
       - TOKEN=tutoken # Token de Duck DNS.
-      - UPDATE_IP=both
+      - UPDATE_IP=ipv4
       - LOG_FILE=false
     volumes:
       - ./duckdns:/config # Directorio para archivos persistentes.
